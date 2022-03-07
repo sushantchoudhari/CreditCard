@@ -56,7 +56,7 @@ public class CreditCardValidatorTest {
 
     @Test
     public void creditcard_length_greater_than_19_() {
-        final String incorrectCrediCardNumber = "11223344556677889900";
+        final String incorrectCrediCardNumber = "4407392041873274552222344";
         final boolean got =
                 creditCardValidator.isValid(incorrectCrediCardNumber, constraintValidatorContext);
         assertFalse(got);
@@ -64,7 +64,7 @@ public class CreditCardValidatorTest {
 
     @Test
     public void creditcard_with_alphabets() {
-        final String incorrectCrediCardNumber = "12345678912345678uu";
+        final String incorrectCrediCardNumber = "4407392041873274552ssdd";
         final boolean got =
                 creditCardValidator.isValid(incorrectCrediCardNumber, constraintValidatorContext);
         assertFalse(got);
