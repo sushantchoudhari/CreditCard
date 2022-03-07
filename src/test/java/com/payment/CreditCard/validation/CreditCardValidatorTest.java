@@ -10,6 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import javax.validation.ConstraintValidatorContext;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 @ExtendWith(MockitoExtension.class)
@@ -23,15 +24,15 @@ public class CreditCardValidatorTest {
 
     @Test
     public void valid_creditcard() {
-        final String correctCreditCardNumber = "12345678903555";
+        final String correctCreditCardNumber = "4407392041873274552";
         final boolean got =
                 creditCardValidator.isValid(correctCreditCardNumber, constraintValidatorContext);
-        assertFalse(got);
+        assertTrue(got);
     }
 
     @Test
     public void invalid_luhn10_creditcard() {
-        final String incorrectCrediCardNumber = "22345678903545";
+        final String incorrectCrediCardNumber = "4407392041873274553";
         final boolean got =
                 creditCardValidator.isValid(incorrectCrediCardNumber, constraintValidatorContext);
         assertFalse(got);
